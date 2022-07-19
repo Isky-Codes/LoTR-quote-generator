@@ -14,6 +14,8 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         const quotesCollection = db.collection("quotes");
 
         app.set("view engine", "ejs");
+        app.use(express.static("public"));
+        app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
 
         //READ Functions
@@ -24,6 +26,11 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
                 })
                 .catch(error => console.error(error));
             
+        });
+
+        //UPDATE Functions
+        app.put("/quotes", (req, res) => {
+            console.log(req.body);
         });
 
 
