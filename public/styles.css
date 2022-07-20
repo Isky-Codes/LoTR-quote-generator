@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Middleearth;
+    src: url(/public/css/Middleearth-ao6m.ttf);
+}
+
+@font-face {
+    font-family: Ringbearer;
+    src: url(../css/RingbearerMedium-51mgZ.ttf);
+}
+
+.ringbearer {
+    font-family: Ringbearer;
+}

@@ -5,10 +5,11 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>LotR Quote Generator</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="/styles.css"/>
     
 </head>
 <body>
-    <h1>Lord of the Rings Quote Generator</h1>
+    <h1 class="ringbearer">Lord of the Rings Quote Generator</h1>
 
     <form action="/quotes" method="POST">
         <input type="text" placeholder="name" name="name">
@@ -34,7 +35,18 @@
         <button id="update-button">Replace quote</button>
     </div>
 
+    <div>
+        <h2>Remove Darth Vader!</h2>
+        <p>
+          Delete one Darth Vader's quote. Does nothing if there are no more Darth
+          Vader's quote
+        </p>
+        <button id="delete-button">Delete Darth Vader's quote</button>
+    </div>
+
+    <div id="message"></div>
+
     
-    <script src='../public/main.js'></script>
+    <script src="/main.js"></script>
 </body>
 </html>

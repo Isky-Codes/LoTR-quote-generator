@@ -14,9 +14,9 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         const quotesCollection = db.collection("quotes");
 
         app.set("view engine", "ejs");
-        app.use(express.static("public"));
-        app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.json());
+        app.use(express.static(__dirname + "/public"));
 
         //READ Functions
         app.get("/", (req, res) => {
@@ -29,9 +29,22 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         });
 
         //UPDATE Functions
-        app.put("/quotes", (req, res) => {
-            console.log(req.body);
-        });
+        app.put('/quotes', (req, res) => {
+            quotesCollection.findOneAndUpdate(
+              { name: 'Darth Vadar' },
+              {
+                $set: {
+                  name: req.body.name,
+                  quote: req.body.quote
+                }
+              },
+              {
+                upsert: true
+              }
+            )
+              .then(result => res.json('Success'))
+              .catch(error => console.error(error));
+          });
 
 
         //CREATE Functions
@@ -41,6 +54,20 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
                     res.redirect("/");
                 })
                 .catch(error => console.error(error));
+        });
+
+        //DELETE Functions
+        app.delete("/quotes", (req, res) => {
+          quotesCollection.deleteOne(
+            {name: req.body.name}
+          )
+            .then(result => {
+              if (result.deletedCount === 0) {
+                return res.json("No quote to delete");
+              }
+              res.json("Deleted Quote");
+            })
+            .catch(error => console.error(error));
         });
 
         //Sets up the server
