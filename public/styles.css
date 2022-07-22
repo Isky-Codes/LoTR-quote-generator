@@ -1,13 +1,88 @@
 @font-face {
     font-family: Middleearth;
-    src: url(/public/css/Middleearth-ao6m.ttf);
+    src: url(/css/fonts/Middleearth-ao6m.ttf);
 }
 
 @font-face {
     font-family: Ringbearer;
-    src: url(../css/RingbearerMedium-51mgZ.ttf);
+    src: url(/css/fonts/RingbearerMedium-51mgZ.ttf);
 }
 
 .ringbearer {
     font-family: Ringbearer;
+}
+
+.middleearth {
+    font-family: Middleearth;
+}
+
+
+
+.title {
+    font-size: 3rem;
+    color: rgb(251, 223, 122);
+    text-align: center;
+}
+
+.mainContainer {
+    height: 55rem;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid green;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.functionContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0.5rem;
+    border: 1px solid red;   
+}
+
+.quoteSubmit, .updateContainer, .removeContainer {
+    width: 20%;
+    height: 10rem;
+    padding: 1rem;
+    border: 1px solid rgb(251, 223, 122);
+}
+
+.updateContainer, .removeContainer {
+    background-color: rgb(29, 29, 31);
+    width: 25%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.removeContainer {
+    width: 33%;
+}
+
+.quotesContainer {
+    border: 1px solid blue;
+    height: 35rem;
+}
+
+.updateContainer h2, .updateContainer p, .removeContainer h2, .removeContainer p {
+    font-family: MiddleEarth;
+    color: rgb(251, 223, 122);
+}
+
+.removeContainer h2 {
+    font-size: 1.1rem;
+}
+
+.removeContainer p {
+    font-size: 0.8rem;
+}
+
+.quoteSubmit h2 {
+    color: rgb(251, 223, 122);
 }

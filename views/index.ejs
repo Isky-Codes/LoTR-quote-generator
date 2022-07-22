@@ -6,45 +6,63 @@
     <title>LotR Quote Generator</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" type="text/css" href="/styles.css"/>
+    <style>body { background-image: url(/css/img/background.jpg) }</style>
     
 </head>
 <body>
-    <h1 class="ringbearer">Lord of the Rings Quote Generator</h1>
+    <h1 class="middleearth title">Lord of the Rings Quote Generator</h1>
 
-    <form action="/quotes" method="POST">
-        <input type="text" placeholder="name" name="name">
-        <input type="text" placeholder="quote" name="quote">
-        <button type="submit">Submit</button>
-    </form>
+    <div class="mainContainer">
 
-    <h2>Quotes</h2>
-    <ul class="quotes">
-        <% for(let i = 0; i< quotes.length; i++) {%>
-            <li class="quote">
-                <span><%= quotes[i].name %></span>:
-                <span><%= quotes[i].quote %></span>
-            </li>
-        <% } %>
-    </ul>
 
-    <div>
-        <h2>The Witch King Invades</h2>
-        <p>
-          Replace a quote with a quote from the Witch King
-        </p>
-        <button id="update-button">Replace quote</button>
+        <div class="functionContainer">
+            
+            <div class="quoteSubmit">
+                <h2 class="middleearth">Submit a new favourite quote</h2>
+                <form action="/quotes" method="POST">
+                    <input type="text" placeholder="name" name="name">
+                    <input type="text" placeholder="quote" name="quote">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="updateContainer">
+                <h2>The Witch King Invades</h2>
+                <p>
+                  Replace a quote with a quote from the Witch King
+                </p>
+                <button id="update-button">Replace quote</button>
+            </div>
+
+            <div class="removeContainer">
+                <h2>Remove the Witch King!</h2>
+                <p>
+                  Delete one Darth Vader's quote. Does nothing if there are no more Darth
+                  Vader's quote
+                </p>
+                <button id="delete-button">Delete Darth Vader's quote</button>
+            </div>
+        
+        </div>
+
+        <div class="quotesContainer">
+            <h2>Quotes</h2>
+            <ul class="quotes">
+                <% for(let i = 0; i< quotes.length; i++) {%>
+                    <li class="quote">
+                        <span><%= quotes[i].name %></span>:
+                        <span><%= quotes[i].quote %></span>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    
+
+    
+        <div id="message"></div>
     </div>
 
-    <div>
-        <h2>Remove Darth Vader!</h2>
-        <p>
-          Delete one Darth Vader's quote. Does nothing if there are no more Darth
-          Vader's quote
-        </p>
-        <button id="delete-button">Delete Darth Vader's quote</button>
-    </div>
 
-    <div id="message"></div>
 
     
     <script src="/main.js"></script>
