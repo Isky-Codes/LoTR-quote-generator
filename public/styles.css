@@ -25,11 +25,10 @@
 }
 
 .mainContainer {
-    height: 55rem;
     width: 80%;
     margin: 0 auto;
     padding: 1rem;
-    border: 1px solid green;
+    margin-left: 350px;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
@@ -40,8 +39,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    padding: 0.5rem;
-    border: 1px solid red;   
+    padding: 0.5rem; 
 }
 
 .quoteSubmit, .updateContainer, .removeContainer {
@@ -51,6 +49,9 @@
     border: 1px solid rgb(251, 223, 122);
 }
 
+.quoteSubmit {
+    background-color: rgb(29, 29, 31);
+}
 .updateContainer, .removeContainer {
     background-color: rgb(29, 29, 31);
     width: 25%;
@@ -65,9 +66,23 @@
     width: 33%;
 }
 
-.quotesContainer {
-    border: 1px solid blue;
-    height: 35rem;
+.quotesContainer h2 {
+    font-size: 2rem;
+    font-family: Middleearth;
+    margin-left: 50rem;
+    color: rgb(251, 223, 122);
+}
+
+.quote {
+    font-size: 2rem;
+    font-family: Middleearth;
+    color: rgb(251, 223, 122);
+    list-style: none;
+}
+
+.quoteQuote {
+    font-size: 1.5rem;
+    color: white;
 }
 
 .updateContainer h2, .updateContainer p, .removeContainer h2, .removeContainer p {
@@ -85,4 +100,15 @@
 
 .quoteSubmit h2 {
     color: rgb(251, 223, 122);
+}
+
+.nameInput, .quoteInput {
+    border-radius: 25px;
+}
+
+.submitBtn {
+    margin-top: 1rem;
+    height: 2rem;
+    width: 5rem;
+    border-radius: 20px;
 }

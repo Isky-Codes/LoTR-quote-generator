@@ -20,9 +20,9 @@
             <div class="quoteSubmit">
                 <h2 class="middleearth">Submit a new favourite quote</h2>
                 <form action="/quotes" method="POST">
-                    <input type="text" placeholder="name" name="name">
-                    <input type="text" placeholder="quote" name="quote">
-                    <button type="submit">Submit</button>
+                    <input class="nameInput" type="text" placeholder="Insert a name" name="name">
+                    <input class="quoteInput" type="text" placeholder="Insert a quote" name="quote">
+                    <button class="submitBtn" type="submit">Submit</button>
                 </form>
             </div>
 
@@ -37,10 +37,9 @@
             <div class="removeContainer">
                 <h2>Remove the Witch King!</h2>
                 <p>
-                  Delete one Darth Vader's quote. Does nothing if there are no more Darth
-                  Vader's quote
+                  Delete one of the Witch King's quote.
                 </p>
-                <button id="delete-button">Delete Darth Vader's quote</button>
+                <button id="delete-button">Delete the Witch King's quote</button>
             </div>
         
         </div>
@@ -50,8 +49,8 @@
             <ul class="quotes">
                 <% for(let i = 0; i< quotes.length; i++) {%>
                     <li class="quote">
-                        <span><%= quotes[i].name %></span>:
-                        <span><%= quotes[i].quote %></span>
+                        <span class="quoteName"><%= quotes[i].name %></span>:
+                        <span class="quoteQuote"><%= quotes[i].quote %></span>
                     </li>
                 <% } %>
             </ul>
