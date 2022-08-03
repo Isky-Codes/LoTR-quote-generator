@@ -15,7 +15,7 @@ Aim to add quote removal function to remove quotes from the list.
 As this was my first attempt at a CRUD app I have learned:
 
 - Different CRUD methods.
-- How to use GET, PUt, POST, DElETE
+- How to use GET, PUT, POST, DELETE
 - Setting up NODE.JS and modules
 - How to connect to a MongoDB database
 - Basic MongoDB methods (adding, removing, updating documents in a collection)
